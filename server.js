@@ -33,6 +33,12 @@ app.get('/blogs/new', blogController.newBlog)
 //After form submission the data is posted to the database
 app.post('/blogs',blogController.createBlog)
 
+//Displays the individual blog
+app.get('/blogs/:_id',blogController.showBlog)
+
+//Redirects the blog to the edit template
+app.get('/blogs/:_id/edit', blogController.editBlog)
+
 app.listen(3000, ()=> {
     console.log('Listening');
 })
