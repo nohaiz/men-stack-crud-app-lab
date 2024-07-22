@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Index</title>
 </head>
-<body>
     <h1>Here is a list of blogs</h1>
-    <a href="/blogs/create">Create a new blog</a>
+    <%blogs.forEach((blog) => {%>
+        <ul>
+            <li><%=blog.title%></li>
+        </ul>
+    <%})%>
+    <br>
+    <a href="/blogs/new">Create a new blog</a>
 </body>
 </html>

@@ -5,7 +5,7 @@ const blogSchema = new mongoose.Schema( {
     synops: String,
     body: String,
 
-}, {
+},{
     timestamps: true
 })
 

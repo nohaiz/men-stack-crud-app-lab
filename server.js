@@ -10,24 +10,28 @@ require('./config/database.js');
 //Model 
 require('./models/blogs.js');
 
+
 //Controller
 const blogController = require('./controllers/blogs.js');
 
 //Middleware
-
 const app = express();
 app.use(morgan('dev'));
+app.use(express.urlencoded({ extended: false }));
 
 //Routes
 app.get('/', (req, res) => {
     res.render('index.ejs');
 })
 
-//This wont work cause i dont have index ready yet
+//Displays the entire list of resources
 app.get('/blogs',blogController.index)
 
-app.get('/blogs/create',blogController.newBlog)
+//Redirects the user to the create form
+app.get('/blogs/new', blogController.newBlog)
 
+//After form submission the data is posted to the database
+app.post('/blogs',blogController.createBlog)
 
 app.listen(3000, ()=> {
     console.log('Listening');
