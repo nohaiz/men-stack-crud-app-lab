@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 require('./config/database.js');
 
 //Model 
+require('./models/blogs.js');
 
 //Middleware
 
