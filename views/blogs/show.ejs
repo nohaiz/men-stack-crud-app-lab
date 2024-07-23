@@ -7,12 +7,12 @@
 </head>
 <body>
     <h1>Show Blog</h1>
-    <p><%= blogDetails.title %></p>
-    <p><%= blogDetails.synops %></p>
-    <p><%= blogDetails.body %></p>
-    <a href="<%= blogDetails._id%>/edit">Edit</a>
+    <p><%= blog.title %></p>
+    <p><%= blog.synops %></p>
+    <p><%= blog.body %></p>
+    <a href="<%= blog._id%>/edit">Edit</a>
     <br><br>
-    <form action="/blogs/<%= blogDetails._id%>?_method=DELETE" method="POST">
+    <form action="/blogs/<%= blog._id%>?_method=DELETE" method="POST">
         <button type="submit">Delete</button>
     </form>
     <br>
