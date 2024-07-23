@@ -18,6 +18,8 @@ const blogController = require('./controllers/blogs.js');
 const app = express();
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
+
 
 //Routes
 app.get('/', (req, res) => {
@@ -37,7 +39,9 @@ app.post('/blogs',blogController.createBlog)
 app.get('/blogs/:_id',blogController.showBlog)
 
 //Redirects the blog to the edit template
-app.get('/blogs/:_id/edit', blogController.editBlog)
+app.get('/blogs/:id/edit', blogController.editBlog)
+
+app.put('/blogs/:id', blogController.updateBlog)
 
 app.listen(3000, ()=> {
     console.log('Listening');
