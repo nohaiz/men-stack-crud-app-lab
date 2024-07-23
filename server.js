@@ -43,6 +43,8 @@ app.get('/blogs/:id/edit', blogController.editBlog)
 
 app.put('/blogs/:id', blogController.updateBlog)
 
+app.delete('/blogs/:id', blogController.deleteBlog)
+
 app.listen(3000, ()=> {
     console.log('Listening');
 })

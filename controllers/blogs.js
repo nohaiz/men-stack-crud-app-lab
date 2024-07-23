@@ -27,8 +27,9 @@ const updateBlog = async (req, res)=> {
     await Blog.findByIdAndUpdate(req.params.id, req.body);
     res.redirect(`/blogs/${req.params.id}`);
 }
-const deleteBlog = async ()=> {
-    
+const deleteBlog = async (req, res)=> {
+    await Blog.findByIdAndDelete(req.params.id)
+    res.redirect('/blogs');
 }
 
 module.exports = {

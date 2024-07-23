@@ -11,7 +11,11 @@
     <p><%= blogDetails.synops %></p>
     <p><%= blogDetails.body %></p>
     <a href="<%= blogDetails._id%>/edit">Edit</a>
-    <a href="">Delete</a>
+    <br><br>
+    <form action="/blogs/<%= blogDetails._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    <br>
     <a href="/blogs">Back to the blogs page</a>
 </body>
 </html>
